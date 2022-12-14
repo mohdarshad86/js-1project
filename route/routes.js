@@ -39,7 +39,7 @@ router.post("/players", function (req, res) {
   let play = players.find((x) => x.name === bodyName);
 
   if (play) {
-    res.send("Player data already exist");
+    res.send({ data: players, status: true });
   } else {
     //just push the body object to the players object
     players.push(req.body);
